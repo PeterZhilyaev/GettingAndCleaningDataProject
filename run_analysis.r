@@ -65,6 +65,5 @@ library("dplyr")
 Xy_dplyr <- tbl_df(Xy)
 Xy_dplyr <- group_by(Xy_dplyr, `Subject Id`, Activity)
 Xy_summary <- summarise_each(Xy_dplyr, funs(mean), 1:(length(Xy_dplyr)-2))
-View(Xy_summary)
 
-
+write.table(Xy_summary, file = 'summary.txt', row.name=FALSE)  
